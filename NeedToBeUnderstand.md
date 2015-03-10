@@ -3,8 +3,8 @@
     col=`awk 'END{print NR}' /etc/rc.local`
     sed -i ''"$col"'i nohup /usr/local/bin/ss-server -c /etc/shadowsocks/config.json > /dev/null 2>&1 &' /etc/rc.local
 
-#Check this one
-
+##Check this one
+注意查询相关的不熟悉的东西
     echo ""
     echo "Congratulations, shadowsocks-libev install completed!"
     echo -e "Your Server IP: \033[41;37m ${IP} \033[0m"
