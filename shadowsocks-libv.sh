@@ -11,6 +11,10 @@ export PATH
 ##Adding my own json-configure
 ##change something so adapt my own VPS
 ##
+##You can add your config file from this website
+$website =
+$tmp_dir = /tmp/shadowsocks
+
 
 clear
 echo "#############################################################"
@@ -82,8 +86,8 @@ function pre_install(){
 
 # Download latest shadowsocks-libev
 function download_files(){
-    mkdir -p /tmp/shadowsocks-libev
-    cd /tmp/shadowsocks-libev
+    mkdir -p $tmp_dir
+    cd $tmp_dir
 
     if [ -f shadowsocks-libev.zip ];then
         echo "shadowsocks-libev.zip [found]"
@@ -119,7 +123,7 @@ function config_shadowsocks(){
 #    "method":"aes-256-cfb"
 #}
 #EOF
-}
+wget -N --no-check-certificate $website
 
 # Install
 function install(){
@@ -149,27 +153,16 @@ function install(){
             fi
         else
             echo ""
-            echo "Shadowsocks-libev install failed! Please visit http://teddysun.com/358.html and contact."
+            echo "Shadowsocks-libev install failed!"
             exit 1
         fi
     fi
-    cd $cur_dir
+    cd $tmp_dir
     # Delete shadowsocks-libev floder
-    rm -rf $cur_dir/shadowsocks-libev-master/
+    rm -rf $tmp_dir/shadowsocks-libev-master/
     # Delete shadowsocks-libev zip file
     rm -f shadowsocks-libev.zip
     clear
-    echo ""
-    echo "Congratulations, shadowsocks-libev install completed!"
-    echo -e "Your Server IP: \033[41;37m ${IP} \033[0m"
-    echo -e "Your Server Port: \033[41;37m 8989 \033[0m"
-    echo -e "Your Password: \033[41;37m ${shadowsockspwd} \033[0m"
-    echo -e "Your Local IP: \033[41;37m 127.0.0.1 \033[0m"
-    echo -e "Your Local Port: \033[41;37m 1080 \033[0m"
-    echo -e "Your Encryption Method: \033[41;37m aes-256-cfb \033[0m"
-    echo ""
-    echo "Welcome to visit:http://teddysun.com/358.html"
-    echo "Enjoy it!"
     echo ""
     exit 0
 }
