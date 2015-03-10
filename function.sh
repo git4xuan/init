@@ -31,6 +31,7 @@ function getversion(){
     fi
 }
 
+
 # CentOS version
 function centosversion(){
     local code=$1
