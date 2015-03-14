@@ -22,7 +22,7 @@ if [ "$1" != "--help"  ]; then
 	fi
 	ip_port=""
 	echo "Input your IPv4/IPv6 address:port"
-	echo "Ipv6 format is [2001:38::1]:80 (example)" 
+	echo "Ipv6 format is [2001:38::1]:80 (example)"
 	read -p "Input IP Address:" ip_port
 	echo "The data $ip_port has no checked ,Remember"
 
@@ -31,7 +31,10 @@ if [ "$1" != "--help"  ]; then
 	read -p "default domain is $conf_location:" conf_location
 	if [ ! -d "$conf_location" ]
 		echo "OK! This folder exists!"
-	else 
+	else
 		echo "Error , Check configure folder exists!"
 		exit 1
 	fi
+
+else
+	echo 

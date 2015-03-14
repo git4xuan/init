@@ -5,6 +5,11 @@ function rootness(){
        exit 1
     fi
 }
+# Check if user is root
+if [ $(id -u) != "0" ]; then
+    echo "Error: You must be root to run this script, use sudo sh $0"
+    exit 1
+fi
 
 # Check OS
 # openSUSE  for more
@@ -42,4 +47,22 @@ function centosversion(){
     else
         return 1
     fi
+}
+
+
+#Get a comfirmable answer
+function get_char_start(){
+get_char()
+{
+SAVEDSTTY=`stty -g`
+stty -echo
+stty cbreak
+dd if=/dev/tty bs=1 count=1 2> /dev/null
+stty -raw
+stty echo
+stty $SAVEDSTTY
+}
+echo ""
+echo "Press any key to start create virtul host..."
+char=`get_char`
 }
