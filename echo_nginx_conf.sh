@@ -12,6 +12,13 @@ echo "======================================================"
 echo "This is a auto_index page added scripts"
 echo "======================================================"
 
+if [ "$2" != " " ];  then
+	##Not Sure the syntax  correct
+	echo "your root location is $2"
+	echo ""
+else
+	$2 = 'pwd'
+
 if [ "$1" != "--help"  ]; then
 	domain='hostname'
 	echo "Please input your domain that you want to add:"
@@ -35,6 +42,22 @@ if [ "$1" != "--help"  ]; then
 		echo "Error , Check configure folder exists!"
 		exit 1
 	fi
+	cat > $conf_location  <<EOF
+	server
+		{
+			listen 80;
+			#listen [::]:80;
+			server_name $domain;
+			autoindex on ;
+			root  $2; #default root location is "pwd"
+
+			location
+			
+
+
+	EOF
+
+
 
 else
-	echo 
+	echo "Input your website you want to share"

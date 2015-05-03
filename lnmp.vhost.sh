@@ -28,13 +28,13 @@ if [ "$1" != "--help" ]; then
 	if [ ! -f "/usr/local/nginx/conf/vhost/$domain.conf" ]; then
 	echo "==========================="
 	echo "domain=$domain"
-	echo "===========================" 
+	echo "==========================="
 	else
 	echo "==========================="
 	echo "$domain is exist!"
-	echo "==========================="	
+	echo "==========================="
 	fi
-	
+
 	echo "Do you want to add more domain name? (y/n)"
 	read add_more_domainame
 
