@@ -1,6 +1,5 @@
 #!/bin/bash
 
-$Auth_Key=
 
 ###Install deluge and web-UI , folder-where
 ##shell
@@ -9,7 +8,7 @@ apt-get install -y deluge*
 
 
 ###Install nginx and add special-web-index
-#wget --no****
+###不安装nginx  这里防止一下，反正就是用ssh的连接方式
 
 ###Install fuse sshfs  mkdir
 apt-get install -y fuse sshfs
