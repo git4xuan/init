@@ -21,6 +21,8 @@ function checkos(){
         OS=Debian
     elif [ ! -z "`cat /etc/issue | grep Ubuntu`" ];then
         OS=Ubuntu
+    elif [ ! -z "`cat /etc/issue | grep openSUSE`" ];then
+        OS=openSUSE
     else
         echo "Not support OS, Please reinstall OS and retry!"
         exit 1
