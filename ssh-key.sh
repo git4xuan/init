@@ -1,5 +1,7 @@
 #!/bin/bash
 # add my ssh-key into folders
+
+##放弃不用了，使用同一的添加的newauth
 if   [ ! -d ~/.ssh/ ] ; then
 	mkdir ~/.ssh
 fi

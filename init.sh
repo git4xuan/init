@@ -1,5 +1,6 @@
 #!/bin/bash
 #based on Ubuntu
+#用于启动相关资源和下载对应的文件
 
 ###Install sshd and ssh-key
 ##shell

@@ -1,0 +1,10 @@
+#用于cron文件添加，直接使用crontab “file”
+#分  时  日  月  星期  /循环
+#
+#
+
+5   0    *   *    *    root    apt-get upgrade -y
+8   0    *   *    *    root    apt-get update -y
+#这里注意下位置，到时git时位置在git文件下
+23   *   *   *    *    root    sh  /root/git/init/hostdenylocal.sh
+27   *   *   *    *    root    sh  /root/git/init/hostdenyonline.sh
