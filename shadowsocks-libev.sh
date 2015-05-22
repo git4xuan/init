@@ -5,6 +5,10 @@ export PATH
 #由之前的teddysun的改变而来。
 
 clear
+##prepare some unexpected thing happens
+apt-get update -y
+apt-get upgrade -y
+apt-get install bash -y
 
 # Install Shadowsocks-libev
 function install_shadowsocks_libev(){
@@ -49,8 +53,11 @@ function pre_install(){
     echo -e "Your main public IP is\t\033[32m$IP\033[0m"
     echo ""
     #Current folder
-    cur_dir=`pwd`
+    # to /tmp folder
+    cur_dir=/tmp
     cd $cur_dir
+
+
 }
 
 # Download latest shadowsocks-libev
@@ -126,9 +133,10 @@ function install_libev(){
     # Delete shadowsocks-libev floder
     rm -rf $cur_dir/shadowsocks-libev-master/
     # Delete shadowsocks-libev zip file
-    rm -f shadowsocks-libev.zip
+    #rm -f shadowsocks-libev.zip
     clear
-    echo "Install completed! "
+    echo "                Install completed!                 "
+    echo "   shadowsocks-libev.zip in /tmp and not be deleted"
 }
 
 # Uninstall Shadowsocks-libev
