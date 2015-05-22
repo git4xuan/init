@@ -1,23 +1,10 @@
 #! /bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
-#===============================================================================================
-#   System Required:  Debian or Ubuntu (32bit/64bit)
-#   Description:  Install Shadowsocks(libev) for Debian or Ubuntu
-#   Author: Teddysun <i@teddysun.com>
-#   Intro:  http://teddysun.com/358.html
-#===============================================================================================
+
+#由之前的teddysun的改变而来。
 
 clear
-echo ""
-echo "#############################################################"
-echo "# Install Shadowsocks(libev) for Debian or Ubuntu (32bit/64bit)"
-echo "# Intro: http://teddysun.com/358.html"
-echo "#"
-echo "# Author: Teddysun <i@teddysun.com>"
-echo "#"
-echo "#############################################################"
-echo ""
 
 # Install Shadowsocks-libev
 function install_shadowsocks_libev(){
@@ -47,26 +34,8 @@ fi
 
 # Pre-installation settings
 function pre_install(){
-    #Set shadowsocks-libev config password
-    echo "Please input password for shadowsocks-libev:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    if [ "$shadowsockspwd" = "" ]; then
-        shadowsockspwd="teddysun.com"
-    fi
-    echo "password:$shadowsockspwd"
-    echo "####################################"
-    get_char(){
-        SAVEDSTTY=`stty -g`
-        stty -echo
-        stty cbreak
-        dd if=/dev/tty bs=1 count=1 2> /dev/null
-        stty -raw
-        stty echo
-        stty $SAVEDSTTY
-    }
-    echo ""
-    echo "Press any key to start...or Press Ctrl+C to cancel"
-    char=`get_char`
+    #直接放置配置文件，下次更新时候用
+
     # Update System
     apt-get -y update
     # Install necessary dependencies
@@ -103,7 +72,7 @@ function download_files(){
         fi
     else
         echo ""
-        echo "Unzip shadowsocks-libev failed! Please visit http://teddysun.com/358.html and contact."
+        echo "Unzip shadowsocks-libev failed! "
         exit 1
     fi
 }
@@ -113,17 +82,16 @@ function config_shadowsocks(){
     if [ ! -d /etc/shadowsocks-libev ];then
         mkdir /etc/shadowsocks-libev
     fi
-    cat > /etc/shadowsocks-libev/config.json<<-EOF
-{
-    "server":"0.0.0.0",
-    "server_port":8989,
-    "local_address":"127.0.0.1",
-    "local_port":1080,
-    "password":"${shadowsockspwd}",
-    "timeout":600,
-    "method":"aes-256-cfb"
-}
-EOF
+    #直接将json文件cp进去,这里上面有个启动文件变化，所以位置和名字不变为默认，当然可以用supervisord额
+    # /etc/shadowsocks-libev/config.json
+    if ! wget -N  --no-check-certificate https://bitbucket.org/api/2.0/snippets/git4xuan/KLjj/64deb96d298feca17431ef9fd548d2c7e90bf120/files/config.json;then
+        echo "Failed to download shadowsocks-libev start script!"
+        exit 1
+    else
+        mv config.json /etc/shadowsocks-libev/config.json
+        echo "configure finished"
+    fi
+
 }
 
 # Install
@@ -150,7 +118,7 @@ function install_libev(){
             fi
         else
             echo ""
-            echo "Shadowsocks-libev install failed! Please visit http://teddysun.com/358.html and contact."
+            echo "Shadowsocks-libev install failed!"
             exit 1
         fi
     fi
@@ -160,19 +128,7 @@ function install_libev(){
     # Delete shadowsocks-libev zip file
     rm -f shadowsocks-libev.zip
     clear
-    echo ""
-    echo "Congratulations, shadowsocks-libev install completed!"
-    echo -e "Your Server IP: \033[41;37m ${IP} \033[0m"
-    echo -e "Your Server Port: \033[41;37m 8989 \033[0m"
-    echo -e "Your Password: \033[41;37m ${shadowsockspwd} \033[0m"
-    echo -e "Your Local IP: \033[41;37m 127.0.0.1 \033[0m"
-    echo -e "Your Local Port: \033[41;37m 1080 \033[0m"
-    echo -e "Your Encryption Method: \033[41;37m aes-256-cfb \033[0m"
-    echo ""
-    echo "Welcome to visit:http://teddysun.com/358.html"
-    echo "Enjoy it!"
-    echo ""
-    exit 0
+    echo "Install completed! "
 }
 
 # Uninstall Shadowsocks-libev
