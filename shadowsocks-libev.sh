@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 #由之前的teddysun的改变而来。
-
+#使用时不要使用sh 方式，而是使用 ./  方式，具体原因不明。。。
 clear
 ##prepare some unexpected thing happens
 apt-get update -y
