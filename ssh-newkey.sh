@@ -7,8 +7,8 @@
 
 
 #这是public的位置，最好是http的URL便于下载
-location_pub = https://raw.githubusercontent.com/git4xuan/init/master/files/newauth.pub
-location_sshd = https://raw.githubusercontent.com/git4xuan/init/master/files/sshd_config
+location_pub="https://raw.githubusercontent.com/git4xuan/init/master/files/newauth.pub"
+location_sshd="https://raw.githubusercontent.com/git4xuan/init/master/files/sshd_config"
 
 if [[ ! -d ~/.ssh/ ]]; then
     mkdir ~/.ssh
@@ -19,7 +19,7 @@ apt-get install sshd wget -y
 #backup
 mv /etc/ssh/sshd_config{,.bak}
 
-wget -N --no-check-certificate -O newauth.pub $location_pub
+wget  --no-check-certificate -O newauth.pub $location_pub
 ##注意，这里只移动没有添加，说明这是表明只有这一个公钥
 mv newauth.pub  ~/.ssh/authorized_keys
 
@@ -28,8 +28,8 @@ chmod 700   ~/.ssh/
 
 #更改sshd的config文件，可以使用sed，
 #但是这里为了方便改为直接wget
-wget -N --no-check-certificate -O sshd_config $location_sshd
+wget  --no-check-certificate -O sshd_config $location_sshd
 mv sshd_config /etc/ssh/sshd_config
 
 #配置文件生效
-/etc/init.d/sshd restart
+service sshd restart
