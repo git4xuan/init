@@ -9,7 +9,9 @@
 # OpenSSH is to specify options with their default value where
 # possible, but leave them commented.  Uncommented options change a
 # default value.
+#注意这里是37217 的Port
 
+Port 37217
 #Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
@@ -84,8 +86,8 @@ GSSAPICleanupCredentials yes
 #GSSAPIStrictAcceptorCheck yes
 #GSSAPIKeyExchange no
 
-# Set this to 'yes' to enable PAM authentication, account processing, 
-# and session processing. If this is enabled, PAM authentication will 
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
 # be allowed through the ChallengeResponseAuthentication and
 # PasswordAuthentication.  Depending on your PAM configuration,
 # PAM authentication via ChallengeResponseAuthentication may bypass
