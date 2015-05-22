@@ -7,8 +7,8 @@
 
 
 #这是public的位置，最好是http的URL便于下载
-$location_pub = "https://raw.githubusercontent.com/git4xuan/init/master/files/newauth.pub"
-$location_sshd = "https://raw.githubusercontent.com/git4xuan/init/master/files/sshd_config"
+location_pub = https://raw.githubusercontent.com/git4xuan/init/master/files/newauth.pub
+location_sshd = https://raw.githubusercontent.com/git4xuan/init/master/files/sshd_config
 
 if [[ ! -d ~/.ssh/ ]]; then
     mkdir ~/.ssh
