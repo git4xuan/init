@@ -91,7 +91,8 @@ function config_shadowsocks(){
     fi
     #直接将json文件cp进去,这里上面有个启动文件变化，所以位置和名字不变为默认，当然可以用supervisord额
     # /etc/shadowsocks-libev/config.json
-    if ! wget -N  --no-check-certificate https://bitbucket.org/api/2.0/snippets/git4xuan/KLjj/64deb96d298feca17431ef9fd548d2c7e90bf120/files/config.json;then
+    ##libev  只支持单端口的文件配置，不支持多端口。
+    if ! wget -N  --no-check-certificate https://bitbucket.org/api/2.0/snippets/git4xuan/KLjj/2257a6b48bb55f3e06c38ba5fdde12b207124d36/files/config.json;then
         echo "Failed to download shadowsocks-libev start script!"
         exit 1
     else

@@ -12,3 +12,4 @@
 ###Install shadowsocks and supervisor config-file local-start.
 
 ###Using apt-get install
+sudo apt-get install -y supervisor deluge*
