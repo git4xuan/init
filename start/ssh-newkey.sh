@@ -10,8 +10,8 @@
 location_pub="https://raw.githubusercontent.com/git4xuan/init/master/files/newauth.pub"
 location_sshd="https://raw.githubusercontent.com/git4xuan/init/master/files/sshd_config"
 
-if [[ ! -d ~/.ssh/ ]]; then
-    mkdir ~/.ssh
+if [[ ! -d /root/.ssh/ ]]; then
+    mkdir /root/.ssh
 fi
 
 apt-get install sshd wget -y
@@ -32,4 +32,4 @@ wget  --no-check-certificate -O sshd_config $location_sshd
 mv sshd_config /etc/ssh/sshd_config
 
 #配置文件生效
-service sshd restart
+service ssh restart

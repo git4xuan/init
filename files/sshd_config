@@ -47,7 +47,7 @@ MaxAuthTries 3
 MaxSessions 5
 
 RSAAuthentication yes
-PubkeyAuthentication no
+PubkeyAuthentication yes
 AuthorizedKeysFile	.ssh/authorized_keys
 #AuthorizedKeysCommand none
 #AuthorizedKeysCommandRunAs nobody
@@ -65,7 +65,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 # To disable tunneled clear text passwords, change to no here!
 #PasswordAuthentication yes
 #PermitEmptyPasswords no
-PasswordAuthentication yes
+PasswordAuthentication no
 
 # Change to no to disable s/key passwords
 #ChallengeResponseAuthentication yes
@@ -96,7 +96,7 @@ GSSAPICleanupCredentials yes
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
 #UsePAM no
-UsePAM yes
+#UsePAM yes
 
 # Accept locale-related environment variables
 AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
