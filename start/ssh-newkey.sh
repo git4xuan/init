@@ -14,7 +14,7 @@ if [[ ! -d /root/.ssh/ ]]; then
     mkdir /root/.ssh
 fi
 
-apt-get install sshd wget -y
+apt-get install ssh wget -y
 
 #backup
 mv /etc/ssh/sshd_config{,.bak}

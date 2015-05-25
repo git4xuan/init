@@ -6,5 +6,5 @@ sudo apt-get install -y supervisor deluge*
 chmod +x start/*.sh
 for tmp  in `ls start/`
     do
-        sh tmp
+         ././start/$tmp
 done
