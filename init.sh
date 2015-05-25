@@ -1,15 +1,10 @@
 #!/bin/bash
 #based on Ubuntu
-#用于启动相关资源和下载对应的文件
-
-###Install sshd and ssh-key
-##shell
-#wget --no***
-
-##ssh-key
-#wget --
-
-###Install shadowsocks and supervisor config-file local-start.
-
 ###Using apt-get install
 sudo apt-get install -y supervisor deluge*
+
+chmod +x start/*.sh
+for tmp  in `ls start/`
+    do
+        sh tmp
+done
