@@ -30,18 +30,19 @@ mv /etc/rsyncd.conf{,.bak}
 mv /etc/rsyncd.secret{,.bak}
 
 wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/rsyncd.conf  #URL
-wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secret /etc/rsyncd.secret  && chmod 600 rsyncd.secret
+wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secrets /etc/rsyncd.secrets  && chmod 600 rsyncd.secrets
 
 cd $pwd
 
 
 ###xinetd 下的部分使用sed的方式
+mv /etc/default/rsync{,.bak}
 
 #这里的文件名是不确定的，需要针对性查看。  将disable 去掉了。
 #修改xinet.d
 #sed -e "/disable/s/no/yes/g" /etc/default/rsync
 #也使用download的方式
 #sed -e "/RSYNC_ENABLE/s/true/false/g"  /etc/default/rsync   没有完全替换，只是输出
-wget -N --no-check-certificate  -o /etc/default/rsync https://raw.githubusercontent.com/git4xuan/init/master/files/rsync
+wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init/master/files/rsync && mv rsync /etc/default/rsync
 
 service rsyncd start
