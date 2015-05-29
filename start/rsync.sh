@@ -8,7 +8,7 @@ deluge_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/core.c
 rsync_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.conf"
 rsync_secr="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.secrets"
 pwd="`pwd`"
-apt-get install -y deluge*
+
 #make dir
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
 #deluge 相关的部分
@@ -23,7 +23,7 @@ cd $pwd
 ##rsync  install
 
 cd /tmp
-apt-get install -y rsync
+
 ##出现了rsyncd.conf 文件，rsyncd.secret xinetd.d/*(rsync)下的rsync文件，这里需要改disabled
 #的变化
 mv /etc/rsyncd.conf{,.bak}

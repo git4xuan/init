@@ -1,0 +1,13 @@
+deb http://ftp.us.debian.org/debian stable main contrib non-free
+deb-src http://ftp.us.debian.org/debian stable main contrib non-free
+
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+deb-src http://security.debian.org/ wheezy/updates main contrib non-free
+
+#Third Parties Repos
+#Debian Mozilla team
+deb http://backports.debian.org/debian-backports squeeze-backports main
+
+#Debian Mozilla team
+#wget http://mozilla.debian.net/pkg-mozilla-archive-keyring_1.0_all.deb;
+#dpkg --install pkg-mozilla-archive-keyring_1.0_all.deb
