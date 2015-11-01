@@ -5,6 +5,7 @@
 #先装deluge
 
 deluge_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/core.conf"
+deluge_webconf="https://raw.githubusercontent.com/git4xuan/init/master/files/web.conf"
 rsync_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.conf"
 rsync_secr="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.secrets"
 pwd="`pwd`"
@@ -13,14 +14,15 @@ pwd="`pwd`"
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
 
 deluged
-deluge-web --fork
+pkill deluged
 
 #deluge 相关的部分
 
 mv /root/.config/deluge/core.conf{,.bak}
+mv /root/.config/deluge/web.conf{,.bak}
 cd /tmp
-wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/core.conf
-
+wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/web.conf
+wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/web.conf
 #your deluge file  with other folders created?
 cd $pwd
 
