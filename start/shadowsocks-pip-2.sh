@@ -7,7 +7,7 @@ apt-get update -y
 apt-get upgrade -y
 
 apt-get -y install pip
-apt-get -y install python python-dev python-pip curl wget
+apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
 
 pip install M2Crypto
 pip install greenlet
