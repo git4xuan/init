@@ -23,6 +23,9 @@ mv /root/.config/deluge/web.conf{,.bak}
 cd /tmp
 wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/web.conf
 wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/web.conf
+
+echo "deluge:1028723X:10"  >> $HOME/.config/deluge/auth
+
 #your deluge file  with other folders created?
 cd $pwd
 
@@ -54,3 +57,5 @@ mv /etc/default/rsync{,.bak}
 wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init/master/files/rsync && mv rsync /etc/default/rsync
 
 service rsyncd start
+deluged
+deluge-web --fork
