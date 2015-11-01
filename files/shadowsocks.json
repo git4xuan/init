@@ -1,0 +1,15 @@
+{
+    "server":"::",
+    "local_address": "127.0.0.1",
+     "port_password":{
+   "443":"nagiZip!",
+   "28395":"Uber!dx",
+   "28396":"Face@dpi",
+   "28397":"HHappy59tu",
+   "28398":"X62p!eeb7"
+},
+    "timeout":600,
+    "method":"rc4-md5",
+    "fast_open":true,
+    "workers":3
+}

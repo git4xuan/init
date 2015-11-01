@@ -11,7 +11,7 @@
 apt-get update -y
 apt-get upgrade -y
 
-sudo apt-get install -y supervisor deluge* rsync bash
+sudo apt-get install -y deluge* rsync bash
 #apt-get install -y rsync
 chmod +x start/*.sh
 for tmp  in `ls start/`
