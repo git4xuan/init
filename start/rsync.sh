@@ -11,10 +11,16 @@ pwd="`pwd`"
 
 #make dir
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
+
+deluged
+deluge-web --fork
+
 #deluge 相关的部分
+
 mv /root/.config/deluge/core.conf{,.bak}
 cd /tmp
 wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/core.conf
+
 #your deluge file  with other folders created?
 cd $pwd
 
