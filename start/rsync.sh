@@ -56,6 +56,6 @@ mv /etc/default/rsync{,.bak}
 #sed -e "/RSYNC_ENABLE/s/true/false/g"  /etc/default/rsync   没有完全替换，只是输出
 wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init/master/files/rsync && mv rsync /etc/default/rsync
 
-service rsyncd start
+service rsync start
 deluged
 deluge-web --fork
