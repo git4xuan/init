@@ -3,11 +3,11 @@
 
 echo "deb http://backports.debian.org/debian-backports squeeze-backports main" >> /etc/apt/sources.list
 
-apt-get update -y
-apt-get upgrade -y
+apt-get update --force-yes   -y
+apt-get upgrade --force-yes  -y
 
-apt-get -y install pip
-apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
+apt-get --force-yes  -y install pip
+apt-get --force-yes  -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
 
 pip install M2Crypto
 pip install greenlet
