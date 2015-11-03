@@ -21,7 +21,7 @@ pkill deluged
 mv /root/.config/deluge/core.conf{,.bak}
 mv /root/.config/deluge/web.conf{,.bak}
 cd /tmp
-wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/web.conf
+wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/core.conf
 wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/web.conf
 
 echo "deluge:1028723X:10"  >> $HOME/.config/deluge/auth
@@ -43,6 +43,7 @@ mv /etc/rsyncd.secret{,.bak}
 wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/rsyncd.conf  #URL
 wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secrets /etc/rsyncd.secrets  && chmod 600 rsyncd.secrets
 
+chmod 600 rsyncd.secrets
 cd $pwd
 
 
