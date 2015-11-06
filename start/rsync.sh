@@ -40,7 +40,8 @@ cd /tmp
 mv /etc/rsyncd.conf{,.bak}
 mv /etc/rsyncd.secret{,.bak}
 
-wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/rsyncd.conf  #URL
+wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/rsyncd.conf
+#URL
 wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secrets /etc/rsyncd.secrets  && chmod 600 rsyncd.secrets
 
 chmod 600 rsyncd.secrets
@@ -58,5 +59,7 @@ mv /etc/default/rsync{,.bak}
 wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init/master/files/rsync && mv rsync /etc/default/rsync
 
 service rsync start
+chmod 600 /etc/rsyncd.secrets
+
 deluged
 deluge-web --fork
