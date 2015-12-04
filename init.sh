@@ -8,10 +8,10 @@
 #sudo  apt-get install -y git
 #git clone http://github.com/git4xuan/init.git
 #cd init
-apt-get update --force-yes -y
-apt-get upgrade --force-yes  -y
+apt-get update  -y
+apt-get upgrade   -y
 
-sudo apt-get install --force-yes -y deluge*  rsync bash
+apt-get install --force-yes -y deluge*  rsync bash
 #apt-get install -y rsync
 chmod +x start/*.sh
 for tmp  in `ls start/`

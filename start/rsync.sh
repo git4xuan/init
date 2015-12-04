@@ -14,9 +14,10 @@ pwd="`pwd`"
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
 
 deluged
-pkill deluged
+killall deluged
 
 #deluge 相关的部分
+sleep 10
 
 mv /root/.config/deluge/core.conf{,.bak}
 mv /root/.config/deluge/web.conf{,.bak}
