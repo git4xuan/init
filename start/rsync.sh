@@ -22,8 +22,8 @@ sleep 10
 mv /root/.config/deluge/core.conf{,.bak}
 mv /root/.config/deluge/web.conf{,.bak}
 cd /tmp
-wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/core.conf
-wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/web.conf
+wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/
+wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/
 
 echo "deluge:1028723X:10"  >> $HOME/.config/deluge/auth
 
@@ -41,11 +41,11 @@ cd /tmp
 mv /etc/rsyncd.conf{,.bak}
 mv /etc/rsyncd.secret{,.bak}
 
-wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/rsyncd.conf
+wget  -N --no-check-certificate $rsync_conf  && mv rsyncd.conf /etc/
 #URL
-wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secrets /etc/rsyncd.secrets  && chmod 600 rsyncd.secrets
+wget  -N --no-check-certificate $rsync_secr  && mv rsyncd.secrets /etc/  && chmod 600 /etc/rsyncd.secrets
 
-chmod 600 rsyncd.secrets
+chmod 600 /etc/rsyncd.secrets
 cd $pwd
 
 
