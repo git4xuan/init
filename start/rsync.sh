@@ -12,7 +12,8 @@ pwd="`pwd`"
 
 #make dir
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
-
+#remenber apt-get will auto set deluged start 
+killall deluged
 deluged
 killall deluged
 
