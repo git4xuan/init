@@ -4,32 +4,12 @@
 #接着自己创建的文件夹。可以通过deluge测试后通过
 #先装deluge
 
-deluge_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/core.conf"
-deluge_webconf="https://raw.githubusercontent.com/git4xuan/init/master/files/web.conf"
+
 rsync_conf="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.conf"
 rsync_secr="https://raw.githubusercontent.com/git4xuan/init/master/files/rsyncd.secrets"
 pwd="`pwd`"
 
-#make dir
-mkdir  /root/download  /root/move  /home/torrents  /root/extra
-#remenber apt-get will auto set deluged start 
-killall deluged
-deluged
-killall deluged
-
-#deluge 相关的部分
-sleep 10
-
-mv /root/.config/deluge/core.conf{,.bak}
-mv /root/.config/deluge/web.conf{,.bak}
-cd /tmp
-wget -N --no-check-certificate  $deluge_conf  && mv core.conf /root/.config/deluge/
-wget -N --no-check-certificate  $deluge_webconf  && mv web.conf /root/.config/deluge/
-
-echo "deluge:1028723X:10"  >> $HOME/.config/deluge/auth
-
-#your deluge file  with other folders created?
-cd $pwd
+apt-get install --force-yes -y rsync
 
 
 ##########
@@ -63,5 +43,4 @@ wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init
 service rsync start
 chmod 600 /etc/rsyncd.secrets
 
-deluged
-deluge-web --fork
+
