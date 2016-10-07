@@ -3,7 +3,7 @@
 
 echo "deb http://backports.debian.org/debian-backports squeeze-backports main" >> /etc/apt/sources.list
 
-apt-get update --force-yes   -y
+apt-get -o Acquire::ForceIPv4=true update --force-yes   -y
 apt-get upgrade --force-yes  -y
 
 apt-get --force-yes  -y install pip
