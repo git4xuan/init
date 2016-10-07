@@ -8,14 +8,14 @@
 #sudo  apt-get install -y git
 #git clone http://github.com/git4xuan/init.git
 #cd init
-apt-get update  -y
+apt-get -o Acquire::ForceIPv4=true update -y
 apt-get upgrade   -y
 
-apt-get install --force-yes -y deluge*  rsync bash
+apt-get install --force-yes -y  bash wget
 #apt-get install -y rsync
 chmod +x start/*.sh
 for tmp  in `ls start/`
     do
-         sleep 10
+         sleep 1
          ././start/$tmp
 done
