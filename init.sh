@@ -8,10 +8,20 @@
 #sudo  apt-get install -y git
 #git clone http://github.com/git4xuan/init.git
 #cd init
+
+### only use this one:   wget https://raw.githubusercontent.com/git4xuan/init/master/init.sh
+
 apt-get -o Acquire::ForceIPv4=true update -y
 apt-get upgrade   -y
 
 apt-get install --force-yes -y  bash wget
+apt-get install --force-yes -y git
+
+
+## git pull
+git clone http://github.com/git4xuan/init.git
+cd init
+
 #apt-get install -y rsync
 chmod +x start/*.sh
 for tmp  in `ls start/`
