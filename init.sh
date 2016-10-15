@@ -1,8 +1,7 @@
 #!/bin/bash
-#based on Ubuntu
+#based on Ubuntu 只用下面这一个，，
 # wget https://raw.githubusercontent.com/git4xuan/init/master/init.sh && chmod +x init.sh  && ./init.sh
-#https://github.com/git4xuan/init/archive/master.zip
-#  wget https://github.com/git4xuan/init/archive/master.zip && unzip master.zip
+
 ##需要在/root 文件夹下
 ###Using apt-get install
 #sudo  apt-get install -y git
