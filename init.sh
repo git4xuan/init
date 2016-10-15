@@ -13,8 +13,8 @@
 apt-get -o Acquire::ForceIPv4=true update -y
 apt-get upgrade   -y
 
-apt-get install --force-yes -y  bash wget
-apt-get install --force-yes -y  git
+apt-get install --force-yes -y  bash wget curl
+apt-get install --force-yes -y  git zsh
 apt-get install --force-yes -y  build-essential
 
 
