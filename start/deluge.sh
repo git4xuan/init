@@ -26,9 +26,9 @@ rm -rf deluge-$DELUGE_VERSION
 #make dir
 mkdir  /root/download  /root/move  /home/torrents  /root/extra
 #remenber apt-get will auto set deluged start 
-killall deluged
+kill -9 `  ps aux | grep deluge | grep -v grep | awk '{print $2}' | cut -d. -f 1` &> /dev/null  
 deluged
-killall deluged
+kill -9 `  ps aux | grep deluge | grep -v grep | awk '{print $2}' | cut -d. -f 1` &> /dev/null  
 
 #deluge 相关的部分
 
