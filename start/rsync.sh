@@ -35,9 +35,7 @@ mv /etc/default/rsync{,.bak}
 
 #这里的文件名是不确定的，需要针对性查看。  将disable 去掉了。
 #修改xinet.d
-#sed -e "/disable/s/no/yes/g" /etc/default/rsync
 #也使用download的方式
-#sed -e "/RSYNC_ENABLE/s/true/false/g"  /etc/default/rsync   没有完全替换，只是输出
 wget -N --no-check-certificate   https://raw.githubusercontent.com/git4xuan/init/master/files/rsync && mv rsync /etc/default/rsync
 
 service rsync start

@@ -45,4 +45,5 @@ echo "deluge:1028723X:10"  >> $HOME/.config/deluge/auth
 cd $pwd
 
 deluged
-deluge-web --fork
+#deluge-web --fork
+#remove web ,,none to use
