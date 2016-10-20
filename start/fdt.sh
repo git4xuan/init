@@ -5,7 +5,7 @@ apt-get install --force-yes -y openjdk-7-jdk
 
 wget -O fdt.jar  -N --no-check-certificate $fdt_addr  && mv fdt.jar /usr/local/fdt.jar
 
-cp ./files/fdtServer.sh /root  && chmod +x /root/fdtServer.sh
+cp ./files/fdtServer.sh /usr/bin  && chmod +x /usr/bin/fdtServer.sh
 
 
 
