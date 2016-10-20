@@ -1,4 +1,4 @@
-
+###tragic的kvm 需要先添加key-ring才行，后面才能安装
 #echo "deb http://backports.debian.org/debian-backports squeeze-backports main" >> /etc/apt/sources.list
 # wget https://raw.githubusercontent.com/git4xuan/init/master/init-zip.sh && chmod +x init-zip.sh && sh init-zip.sh
 #apt-add-repository http://backports.debian.org/debian-backports
