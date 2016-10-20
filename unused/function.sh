@@ -68,3 +68,32 @@ echo ""
 echo "Press any key to start create virtul host..."
 char=`get_char`
 }
+
+# Config ShadowsocksR
+function config_shadowsocks(){
+    cat > /etc/shadowsocks.json<<-EOF
+{
+    "server": "0.0.0.0",
+    "server_ipv6": "::",
+    "server_port": ${shadowsocksport},
+    "local_address": "127.0.0.1",
+    "local_port": 1081,
+    "password": "${shadowsockspwd}",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method": "chacha20",
+    "protocol": "auth_sha1_compatible",
+    "protocol_param": "",
+    "obfs": "http_simple_compatible",
+    "obfs_param": "",
+    "dns_ipv6": false,
+    "connect_verbose_info": 0,
+    "redirect": "",
+    "fast_open": false,
+    "workers": 1
+
+}
+EOF
+}
+
+

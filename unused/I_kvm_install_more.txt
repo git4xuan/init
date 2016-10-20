@@ -1,0 +1,23 @@
+##临时的textfile
+
+##挂载部分，如果要挂载两个80G的文件夹到一台kvm上，需要
+    + ovz install smb files (or using ssh as a mount way)恩恩，不使用smb，直接用ssh的方式比较合算。
+    + kvm install-mount sshfs files （or using sshfs）
+    + kvm export smb mount ？(iscsi ?? i'm so crazy)速度应该来说sshfs还是比较慢的，感觉网络不会太稳定，一般在400K左右，少数时间换到1M，如果
+    + 先不管这么多了。先测测看。先写下脚本试下情况。反正都要写。。。
+    + b2 的所有一键连接都要考虑到。
+    + syncthing和owncloud 暂时不管。。
+    + 常驻的vault，什么的都先不要管
+    + ss不使用json文件，使用命令行直接解决。这样便于两边同时开启多个类别的代理。暂时先不考虑v2ray的问题。
+    + ss使用哪一款还是有待考虑。要不先写ss-go的脚本。。。
+    + plex？？？算了，还是选择后面再说，或者，，dao下面安装plex，这样也方便。。。docker 可以考虑
+
+### docker化是在写出了对应的脚本的情况下进行修改得来，尤其是这样鬼不鬼的mount指令。
+### b2可以延伸对象持久化等等的东西。 接着，tar的备份需要会写。。
+
+### 先写脚本，最后考虑部署到linode，vultr，aws还是什么美国其他的地方。。
+
+（也许，可以一并考虑smb。。。）
+
+
+代理分成两项，分别是ss的安装和ss的启动相关。
