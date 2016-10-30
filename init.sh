@@ -13,7 +13,7 @@
 apt-get -o Acquire::ForceIPv4=true update -y
 apt-get upgrade   -y
 
-apt-get install --force-yes -y  bash wget curl
+apt-get install --force-yes -y  bash wget curl sudo psmisc screen
 apt-get install --force-yes -y  git zsh
 apt-get install --force-yes -y  build-essential
 apt-get install --force-yes -y  vim
@@ -24,20 +24,26 @@ apt-get install --force-yes -y  vim
 git clone http://github.com/git4xuan/init.git
 cd init
 
+
+
 apt-get install -y virt-what
+
+chmod +x kvm/*.sh
+chmod +x ovz/*.sh
+chmod +x start/*.sh
+
+
 ## ovz kvm check
 arch=`virt-what`
-if [ $arch -eq "kvm" ]; then
-	chmod +x kvm/*.sh
+if [ $arch = "kvm" ]; then
 	for tmp  in `ls kvm/`
 		do
          sleep 1
          ././kvm/$tmp
 		done
-elif [ $arch -eq "" ]; then
+elif [ $arch = "xen" ]; then
 	echo "XEN-PV"
-elif [ $arch -eq "ovz" ]; then
-    chmod +x ovz/*.sh
+elif [ $arch = "ovz" ]; then
 	for tmp  in `ls ovz/`
 		do
          sleep 1
@@ -47,7 +53,6 @@ else
 	echo "Unsupported Arch"
 fi
 
-chmod +x start/*.sh
 for tmp  in `ls start/`
 	do
 	 sleep 1
