@@ -6,7 +6,11 @@
 apt-get -o Acquire::ForceIPv4=true update --force-yes   -y
 apt-get upgrade --force-yes  -y
 
-apt-get --force-yes  -y install pip
+#apt-get --force-yes  -y install pip
+wget https://bootstrap.pypa.io/get-pip.py
+chmod +x get-pip.py
+python get-pip.py
+
 apt-get --force-yes  -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
 
 pip install M2Crypto
