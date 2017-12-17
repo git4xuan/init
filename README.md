@@ -15,7 +15,4 @@ files文件夹直接作为一个公开的configserver吧。
 #####其他
 后期添加，最近抓不出整块的时间，还是下次分片时间完成吧。
 
-## update01
-添加vim nano
-修改aes转为chacha20
-修改go get的方式为版本指定  gopkg.in/xtaci/kcptun.v20171201/client gopkg.in/xtaci/kcptun.v20171201/server 等
+
