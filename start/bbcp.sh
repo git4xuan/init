@@ -3,7 +3,7 @@ location="`pwd`"
 
 apt-get install -y libssl-dev build-essential zlib1g-dev git
 cd /tmp
-git clone https://github.com/eeertekin/bbcp.git
+git clone https://github.com/git4xuan/bbcp.git
 cd bbcp/src
 make
 cp  -rf ../bin/* ../bin/temp
