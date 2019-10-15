@@ -1,5 +1,5 @@
 #!/bin/bash
-fdt_addr="http://oy2v5m0ma.bkt.clouddn.com/fdt.jar"
+fdt_addr="http://software-sh.oss-accelerate.aliyuncs.com/fdt.jar"
 
 apt-get install -y default-jdk
 
